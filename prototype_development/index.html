@@ -1,0 +1,1502 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://sidhgurnani.github.io/yolo-object-sorter-docs/prototype_development/">
+      
+      
+        <link rel="prev" href="../software_v3/">
+      
+      
+        <link rel="next" href="../vibration_bowl_feeder/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.22">
+    
+    
+      
+        <title>Prototype Development Overview - YOLO Object Sorting Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.84d31ad4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="deep-orange">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#requirements" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="YOLO Object Sorting Documentation" class="md-header__button md-logo" aria-label="YOLO Object Sorting Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            YOLO Object Sorting Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Prototype Development Overview
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="deep-orange"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sidhgurnani/yolo-object-sorter-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../milestones/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Milestones
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../intro/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Introduction and Motivation
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../software_development/" class="md-tabs__link">
+          
+  
+  
+  Development
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../final_testing/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Final Testing
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../results/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Results and Reflections
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="YOLO Object Sorting Documentation" class="md-nav__button md-logo" aria-label="YOLO Object Sorting Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    YOLO Object Sorting Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sidhgurnani/yolo-object-sorter-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../milestones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Milestones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction and Motivation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Architecture
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Software Development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Software Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_development/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Software Development Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../WebUSB_Findings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Version 0 - WebUSB Findings (Shelved)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_v1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Version 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Version 2 (Minimum Viable Software Achieved)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software_v3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Version 3 (Final Software)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Prototype Development
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Prototype Development
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Prototype Development Overview
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prototype Development Overview
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-prototype-solution-ver-2x-93025" class="md-nav__link">
+    <span class="md-ellipsis">
+      Final Prototype Solution (Ver 2.X -- 9/30/25)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Final Prototype Solution (Ver 2.X -- 9/30/25)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object-feeding" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Feeding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transporting-objects-for-detection-and-sorting" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transporting Objects for Detection and Sorting
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparison-of-overall-concepts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparison of Overall Concepts
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#considered-solutions-ver-1x-82625" class="md-nav__link">
+    <span class="md-ellipsis">
+      Considered Solutions (Ver 1.X -- 8/26/25)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Considered Solutions (Ver 1.X -- 8/26/25)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#object-feeding_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Object Feeding
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transporting-objects-for-detection-and-sorting_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Transporting Objects for Detection and Sorting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vibration_bowl_feeder/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Version 1 (Shelved)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prototype_v2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Version 2 (Final Prototype)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../final_testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Final Testing
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../results/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Results and Reflections
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Prototype Development Overview</h1>
+
+<div><p>This page provides a little introduction to what is required by the prototype and how I aim to solve those requirements. </p>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">¶</a></h2>
+<p>First off, here is a list of basic requirements:</p>
+<ul>
+<li>Prototype must allow user to be able to load objects with relative ease, without having to worry too much about the orientation and the type of object loaded.</li>
+<li>Prototype must be able to work with, or show potential to work with, a variety of objects with differing geometry, weight, size, etc.</li>
+<li>Prototype must allow objects to be visible from the webcam and allow the YOLO software to be able to detect and sort objects.</li>
+<li>Prototype must accomodate a "target" and "other" bin, to allow for binary sorting.</li>
+<li>Prototype must allow all electronics to be easily accessible to user to allow for debugging and/or allow for any required work to be performed (rewiring, reconnecting, etc) while also not interfering with the sorting process.</li>
+<li>Prototype must contain a manual override to allow for human intervention in case of failure or unexpected errors.</li>
+<li>Prototype must be able to sort, or show potential to sort, with relative high accuracy.</li>
+</ul>
+<div><br></div>
+
+<p><strong>The list above details all basic requirements, however it leaves out a few desireable features, which would be implemented if the project timeline were to be extended. Ideally, the prototype will also contain:</strong></p>
+<ul>
+<li><strong>Error Handling →</strong> System should have a way of knowing when something has gone wrong and attempt a correction.</li>
+<li><strong>Scalability →</strong> System should be "plug and play", where there would not be much work to scale this up to whatever application it is required for.</li>
+</ul>
+<div><br></div>
+
+<h2 id="final-prototype-solution-ver-2x-93025">Final Prototype Solution (Ver 2.X -- 9/30/25)<a class="headerlink" href="#final-prototype-solution-ver-2x-93025" title="Permanent link">¶</a></h2>
+<p>After speaking with my project mentor, we came to the conclusion that the solution decided on in Version 1.X (Vibration Bowl Feeder + Conveyor Belt) is not ideal for the scope of the project. Pursuing that route would add a lot of complexities with regards to the object feeding, which is not super in line with the scope of the project. While an automated system to feed objects pretty much effortlessly is a solid idea, it is indeed out of scope. </p>
+<p>The main focus of the project is on object detection and using various models to be able to detect and sort objects. That being said, object feeding will be done manually and is not a part of the project I will be designing too much.</p>
+<p>Here is the path forward with regards to the prototype: </p>
+<ol>
+<li>Use an external webcam to allow for greater flexibility. </li>
+<li>Create a standalone device that is not attached to the computer in any way (minus any external webcam connections via USB), so that any changes in laptop size and type can be negated and produce something more universal.</li>
+</ol>
+<p>I am providing a brief concept sketch below to detail what the standalone device might look like: </p>
+<p><img alt="Concept Sketch for Version 2.X" src="../assets/YOLO%20Sorter%20Concept%202.0.jpg"></p>
+<p>Below I am doing a requirements check on the object feeding and object transportation, comparing the idea of a standalone device against the selected solutions from Version 1.X. </p>
+<h3 id="object-feeding">Object Feeding<a class="headerlink" href="#object-feeding" title="Permanent link">¶</a></h3>
+<p>What is being compared?</p>
+<ul>
+<li>Vibration Bowl Feeder</li>
+<li>Manual feeding into standalone device</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Vibration Bowl Feeder</th>
+<th>Manual Feeding</th>
+<th>Notes / Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Easy loading of objects without worrying about orientation or type</td>
+<td>✔️ Meets</td>
+<td>✔️ Meets</td>
+<td>Vibration Bowl Feeders can feedmore consistently and reliably (IF designed correctly); Manual Feeding is simpler and orientation can be controlled by user</td>
+</tr>
+<tr>
+<td>Works with a variety of object sizes, weights, and shapes</td>
+<td>⚠️ Partially meets</td>
+<td>✔️ Meets</td>
+<td>Viration Bowl Feeder is limited by the bowl geometry, but manual feeding can work with objects of any geometry (as long as the chute/ramp to feed is large enough)</td>
+</tr>
+<tr>
+<td>Allows objects to be visible for YOLO detection</td>
+<td>➖ No effect</td>
+<td>➖ No effect</td>
+<td>Object visibility depends on camera setup, independent of method of feeding</td>
+</tr>
+<tr>
+<td>Accommodates “target” and “other” sorting bins</td>
+<td>➖ No effect</td>
+<td>➖ No effect</td>
+<td>Sorting bins are outside the feeder design</td>
+</tr>
+<tr>
+<td>Electronics easily accessible for debugging</td>
+<td>➖ No effect</td>
+<td>➖ No effect</td>
+<td>Electronics housing will be designed separately</td>
+</tr>
+<tr>
+<td>Manual override for human intervention</td>
+<td>➖ No effect</td>
+<td>➖ No effect</td>
+<td>Manual override controlled elsewhere, not part of feeder</td>
+</tr>
+<tr>
+<td>High accuracy sorting capability</td>
+<td>➖ No effect</td>
+<td>➖ No effect</td>
+<td>Sorting accuracy depends on YOLO models</td>
+</tr>
+</tbody>
+</table>
+<p>Even from the table above, the manual feeding is simpler due to less complexity with mechanical components, and more importantly, vibrations. Designing for vibrations is inherently difficult, and even if the feeder was designed and could feed objects up, there will always be a type of object ill-suited to be fed down to either geometry or object's natural frequency. </p>
+<h3 id="transporting-objects-for-detection-and-sorting">Transporting Objects for Detection and Sorting<a class="headerlink" href="#transporting-objects-for-detection-and-sorting" title="Permanent link">¶</a></h3>
+<p>While a comparison can be drawn for the transportation of objects, something of note is that there are two totally different ideas in play. </p>
+<p>Version 1.X had the idea of taking objects and having be fed out and moved into view, however, as specified in the concept sketch for Version 2.X, objects will be fed by means of a gravity hopper or manual feeding directly into the view of the object. This induces much less mechanical complexity as a whole and thus there is a very clear, straightforward, and obvious path forward. </p>
+<h3 id="comparison-of-overall-concepts">Comparison of Overall Concepts<a class="headerlink" href="#comparison-of-overall-concepts" title="Permanent link">¶</a></h3>
+<p>Below is a brief description of both concepts. Note that it includes the object's point of view as it travels to the bins.</p>
+<ul>
+<li>Version 1.X: Vibration Bowl Feeder → 3D Printed Conveyor Belt → Webcam's FOV (viewable by using mirror to reorient FOV) → Bins</li>
+<li>Version 2.X: Manual Feeding (via hopper/ramp/chute) → Platform (within Webcam's FOV) → Bins</li>
+</ul>
+<p>I will do two comparisons, one against the requirements as a whole and one that details prototype feasibilty relative to one another.</p>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Version 1.X</th>
+<th>Version 2.X</th>
+<th>Notes / Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Easy loading of objects without worrying about orientation or type</td>
+<td>✔️ Meets, but with correct, finely tuned design</td>
+<td>✔️ Meets, but more user effort</td>
+<td></td>
+</tr>
+<tr>
+<td>Works with a variety of object sizes, weights, and shapes</td>
+<td>⚠️ Partially meets</td>
+<td>✔️ Meets</td>
+<td>Version 1.X is limited by bowl geometry, while Version 2.X can work with a greater variety of objects</td>
+</tr>
+<tr>
+<td>Allows objects to be visible for YOLO detection</td>
+<td>✔️ Meets</td>
+<td>✔️ Meets</td>
+<td>Both concepts leverage a camera to be able to view and detect objects</td>
+</tr>
+<tr>
+<td>Accommodates “target” and “other” sorting bins</td>
+<td>✔️ Meets</td>
+<td>✔️ Meets</td>
+<td>Both accomodate bins to be able to sort objects</td>
+</tr>
+<tr>
+<td>Electronics easily accessible for debugging</td>
+<td>✔️ Meets</td>
+<td>✔️ Meets</td>
+<td>Electronics will be housed separately in both cases, but can be made easily accessible</td>
+</tr>
+<tr>
+<td>Manual override for human intervention</td>
+<td>✔️ Meets</td>
+<td>✔️ Meets</td>
+<td>Manual override can be built in</td>
+</tr>
+<tr>
+<td>High accuracy sorting capability</td>
+<td>✔️ Meets</td>
+<td>✔️ Meets</td>
+<td>Sorting accuracy depends on YOLO models, which is able to be leveraged in both cases</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Prototype Feasibility Requirement</th>
+<th>Version 1.X</th>
+<th>Version 2.X</th>
+<th>Notes / Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relative Mechanical Complexity</td>
+<td>🔴 More complex</td>
+<td>🟢 Less complex</td>
+<td></td>
+</tr>
+<tr>
+<td>Relative Electrical Complexity</td>
+<td>🔴 More complex</td>
+<td>🟢 Less complex</td>
+<td>Version 1.X will need a vibration motor and a DC motor to move the belt, Version 2.X will need a servo motor to control the platform</td>
+</tr>
+<tr>
+<td>Relative Costs</td>
+<td>🔴 More</td>
+<td>🟢 Less</td>
+<td>Both will cost a similar amount to put together, which includes costs of making and sourcing components</td>
+</tr>
+<tr>
+<td>Prototype-able?</td>
+<td>🔴 Less prototype-able</td>
+<td>🟢 More prototype-able</td>
+<td>Both concepts can be 3D printed and integrated, but Version 1.X requires more components that have to be carefully designed with vibrations in mind</td>
+</tr>
+<tr>
+<td>Reproducible?</td>
+<td>🔴 Not really</td>
+<td>🟢 Yes, easily</td>
+<td>Reasoning due to ability to prototype</td>
+</tr>
+<tr>
+<td>Scalable</td>
+<td>🔴 Less scalable</td>
+<td>🟢 More scalable</td>
+<td>Version 2.X is simpler, and will be easier to assemble and modify for larger sized objects</td>
+</tr>
+</tbody>
+</table>
+<h2 id="considered-solutions-ver-1x-82625">Considered Solutions (Ver 1.X -- 8/26/25)<a class="headerlink" href="#considered-solutions-ver-1x-82625" title="Permanent link">¶</a></h2>
+<p><strong>NOTE:</strong> This is an older version of the prototype that is not being considered after 8/26/25. I have retained the information below for documentation and reference purposes.</p>
+<p>Based on the list of basic requirements above, here are solutions being considered for the broader aspects of the prototype.</p>
+<h3 id="object-feeding_1">Object Feeding<a class="headerlink" href="#object-feeding_1" title="Permanent link">¶</a></h3>
+<p>What is being considered?</p>
+<ul>
+<li>Vibration Bowl Feeder</li>
+<li>Centrifugal Feeder</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Vibration Bowl Feeder</th>
+<th>Centrifugal Feeder</th>
+<th>Notes / Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Easy loading of objects without worrying about orientation or type</td>
+<td>✔️ Meets</td>
+<td>✔️ Meets</td>
+<td>Vibration Bowl Feeders feed slower, but are more reliable; Centrifugal will require a stronger motor or a high torque gear train, is simpler, but is less universal</td>
+</tr>
+<tr>
+<td>Works with a variety of object sizes, weights, and shapes</td>
+<td>⚠️ Partially meets</td>
+<td>⚠️ Partially meets</td>
+<td>Both concepts are limited by bowl geometry to an extent, but not heavily affected by it for prototype purposes</td>
+</tr>
+<tr>
+<td>Allows objects to be visible for YOLO detection</td>
+<td>➖ No effect</td>
+<td>➖ No effect</td>
+<td>Object visibility depends on camera setup, independent of feeder</td>
+</tr>
+<tr>
+<td>Accommodates “target” and “other” sorting bins</td>
+<td>➖ No effect</td>
+<td>➖ No effect</td>
+<td>Sorting bins are outside the feeder design</td>
+</tr>
+<tr>
+<td>Electronics easily accessible for debugging</td>
+<td>➖ No effect</td>
+<td>➖ No effect</td>
+<td>Electronics housing will be designed separately</td>
+</tr>
+<tr>
+<td>Manual override for human intervention</td>
+<td>➖ No effect</td>
+<td>➖ No effect</td>
+<td>Manual override controlled elsewhere, not part of feeder</td>
+</tr>
+<tr>
+<td>High accuracy sorting capability</td>
+<td>➖ No effect</td>
+<td>➖ No effect</td>
+<td>Sorting accuracy depends on YOLO models</td>
+</tr>
+</tbody>
+</table>
+<p>When comparing both solutions on paper, there is no obvious standout choice to start with, I will also do a quick comparison below to highlight a path forward.</p>
+<table>
+<thead>
+<tr>
+<th>Prototype Feasibility Requirement</th>
+<th>Vibration Bowl Feeder</th>
+<th>Centrifugal Feeder</th>
+<th>Notes / Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Relative Mechanical Complexity</td>
+<td>🟢 Less complex</td>
+<td>🔴 More complex</td>
+<td>Vibration Bowl Feeder will have less mechanical components to work with; Centrigufal Feeder will have more mechanical components to work with and has to be designed more carefully</td>
+</tr>
+<tr>
+<td>Relative Electrical Complexity</td>
+<td>🔴 Slightly more complex</td>
+<td>🟢 Slightly less complex</td>
+<td>Vibration Bowl Feeders will need extra tuning and sourcing of electrical components; Centrifugal Bowl Feeders will require less elctrical components and thus less complexity</td>
+</tr>
+<tr>
+<td>Relative Costs</td>
+<td>⚪ Similar</td>
+<td>⚪ Similar</td>
+<td>Both will cost a similar amount to put together, which includes costs of making and sourcing components</td>
+</tr>
+<tr>
+<td>Prototype-able?</td>
+<td>⚪ Similar</td>
+<td>⚪ Similar</td>
+<td>Both concepts can be 3D printed</td>
+</tr>
+<tr>
+<td>Reproducible?</td>
+<td>🟢 Slightly More</td>
+<td>🔴 Slightly Less</td>
+<td>Vibration Bowl Feeders have less parts to put together, which reduces chances of parts not fitting together after 3D printing</td>
+</tr>
+<tr>
+<td>Scalable</td>
+<td>⚪ Similar</td>
+<td>⚪ Similar</td>
+<td>Both concepts can be adapted and scaled in a post-project timeline to fit the needs required through changing out any components that were sourced and altering dimensions in CAD</td>
+</tr>
+</tbody>
+</table>
+<p>Both are pretty equal in terms of viablility, but the vibration bowl feeder is slightly less complex overall and has the potential to be more reproducible to other people. Therefore, I will stick to making a vibration bowl feeder for now.</p>
+<h3 id="transporting-objects-for-detection-and-sorting_1">Transporting Objects for Detection and Sorting<a class="headerlink" href="#transporting-objects-for-detection-and-sorting_1" title="Permanent link">¶</a></h3>
+<p>This section deals with solutions being considered to handle moving the objects being sorted from the feeding mechanism to the webcam'e field of view and then to the bins. </p>
+<p>What is being considered?</p>
+<ul>
+<li><strong>Option 1:</strong> System of Linear Tracks → Webcam's FOV (via a enclosure) → Bins</li>
+<li><strong>Option 2:</strong> 3D Printed Conveyor Belt → Webcam's FOV (viewable by using mirror to reorient FOV) → Bins</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Requirement</th>
+<th>Option 1</th>
+<th>Option 2</th>
+<th>Notes / Explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Easy loading of objects without worrying about orientation or type</td>
+<td>⚠️ Potential negative</td>
+<td>✔️ Meets</td>
+<td>I will focus on loading in the context of going to webcam FOV and then to bins; Option 1 has to be designed carefully to accomodate a vast amount of objects; Option 2 is more universal and doesn't deoend on orientation or type</td>
+</tr>
+<tr>
+<td>Works with a variety of object sizes, weights, and shapes</td>
+<td>⚠️ Potential Negative</td>
+<td>✔️ Meets</td>
+<td>Option 1 is limited in terms of track geometry; Option 2 more universal</td>
+</tr>
+<tr>
+<td>Allows objects to be visible for YOLO detection</td>
+<td>⚠️ Potential Negative</td>
+<td>✔️ Meets</td>
+<td>Option 1's enclosure has to designed to either allow in natural ambient light or be well-lit; Option 2 uses ambient lighting, which works reasonably well</td>
+</tr>
+<tr>
+<td>Accommodates “target” and “other” sorting bins</td>
+<td>✔️ Meets</td>
+<td>✔️ Meets</td>
+<td>Sorting bins can be integrated into both solutions</td>
+</tr>
+<tr>
+<td>Electronics easily accessible for debugging</td>
+<td>➖ No effect</td>
+<td>➖ No effect</td>
+<td>Electronics housing will be designed separately</td>
+</tr>
+<tr>
+<td>Manual override for human intervention</td>
+<td>➖ No effect</td>
+<td>➖ No effect</td>
+<td>Manual override controlled elsewhere, not part transportation sub-system</td>
+</tr>
+<tr>
+<td>High accuracy sorting capability</td>
+<td>➖ No effect</td>
+<td>➖ No effect</td>
+<td>Sorting accuracy depends on YOLO models</td>
+</tr>
+</tbody>
+</table>
+<p>Based on requirements alone, there is a clear path forward. At worst, a conveyor belt will be able to provide more proof of concept than the linear track system, and at best, it will be a sub-system that is more universal. No feasibility study will be conducted unless something goes wrong with the conveyor belt concept.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../software_v3/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Version 3 (Final Software)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Version 3 (Final Software)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../vibration_bowl_feeder/" class="md-footer__link md-footer__link--next" aria-label="Next: Version 1 (Shelved)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Version 1 (Shelved)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+    <a href="https://www.linkedin.com/in/sidh-gurnani/" target="_blank" rel="noopener" title="Connect on LinkedIn" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3M135.4 416H69V202.2h66.5V416zM102.2 96a38.5 38.5 0 1 1 0 77 38.5 38.5 0 1 1 0-77m282.1 320h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/sidhgurnani" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:sidh.gurnani@gmail.com" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4l208 156a48 48 0 0 0 57.6 0l208-156c12.1-9.1 19.2-23.3 19.2-38.4 0-26.5-21.5-48-48-48zM0 196v188c0 35.3 28.7 64 64 64h384c35.3 0 64-28.7 64-64V196L313.6 344.8c-34.1 25.6-81.1 25.6-115.2 0z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.top", "navigation.expand", "content.code.annotate", "content.tabs.link", "content.tooltips", "header.autohide", "search.suggest", "search.highlight", "toc.integrate", "navigation.footer", "content.code.copy"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+    
+  </body>
+</html>
