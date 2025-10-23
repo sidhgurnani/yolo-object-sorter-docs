@@ -1,0 +1,98 @@
+site_name: YOLO Object Sorting Documentation
+site_url: https://sidhgurnani.github.io/yolo-object-sorter-docs/
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.top
+    - navigation.expand
+    - content.code.annotate
+    - content.tabs.link
+    - content.tooltips
+    - header.autohide
+    - search.suggest
+    - search.highlight
+    - toc.integrate
+    - navigation.footer
+    # - content.action.edit
+    # - content.action.view
+    - content.code.copy
+  palette:
+    - scheme: default
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    - scheme: slate
+      primary: black
+      accent: deep orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Fira Code
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - mkdocs-video:
+      is_video: True
+      video_muted: True
+      video_controls: True
+      css_style:
+        width: "100%"
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - toc:
+      permalink: true
+  - attr_list
+  - md_in_html
+  - pymdownx.blocks.caption
+
+extra:
+  social:
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/sidh-gurnani/
+      name: Connect on LinkedIn
+    - icon: fontawesome/brands/github
+      link: https://github.com/sidhgurnani
+    - icon: fontawesome/solid/envelope
+      link: mailto:sidh.gurnani@gmail.com
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Milestones: milestones.md
+  - Introduction and Motivation: intro.md
+  - Architecture: architecture.md
+  - Development: 
+      - Software Development:
+          - Software Development Overview: software_development.md
+          - Version 0 - WebUSB Findings (Shelved): WebUSB_Findings.md
+          - Version 1: software_v1.md
+          - Version 2 (Minimum Viable Software Achieved): software_v2.md
+          - Version 3 (Final Software): software_v3.md
+      - Prototype Development: 
+          - Prototype Development Overview: prototype_development.md
+          - Version 1 (Shelved): vibration_bowl_feeder.md
+          - Version 2 (Final Prototype): prototype_v2.md
+  - Final Testing: final_testing.md
+  - Results and Reflections: results.md
+
+repo_url: https://github.com/sidhgurnani/yolo-object-sorter-docs
+repo_name: GitHub
+edit_uri: edit/main/docs/
