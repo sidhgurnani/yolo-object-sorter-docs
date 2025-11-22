@@ -75,6 +75,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#testing-overview" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -142,6 +147,48 @@
       <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
     
     
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
     
     
       <div class="md-header__source">
@@ -959,7 +1006,7 @@
   
   
   <span class="md-ellipsis">
-    Troubleshooting Guide
+    Troubleshooting and FAQ
     
   </span>
   
@@ -1014,6 +1061,19 @@
       
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Testing
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -1025,6 +1085,101 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#testing-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#test-setup-and-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Setup and Scenario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Test Setup and Scenario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Methodology
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      Testing Plan
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#benchmarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Benchmarks
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video" class="md-nav__link">
+    <span class="md-ellipsis">
+      Video
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#remarks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remarks
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1073,7 +1228,224 @@
 
   <h1>Testing</h1>
 
-<p>Coming soon...</p>
+<div><h2 id="testing-overview">Testing Overview<a class="headerlink" href="#testing-overview" title="Permanent link">¶</a></h2>
+<p>After concluding development of the full cyber physical prototype, testing must be carried out to ensure that it meets the goals that it was intended to, or at least reasonably show that it can do so with further refinement.</p>
+<p>One important thing to note here is that the object sorter prototype is NOT optimized for speed. It was tuned entirely with accuracy in mind. With further tuning and refinement, some time can be saved. Areas of refinement include: speeding up the servo, reducing the cooldown, better model training, etc. I will not consider these future improvements as these are more refinements that can be done to enhance and optimize what is already there.</p>
+<h2 id="test-setup-and-scenario">Test Setup and Scenario<a class="headerlink" href="#test-setup-and-scenario" title="Permanent link">¶</a></h2>
+<p>I took some assorted coins I had at home and mixed them up. This pile comprises of pennies, dimes, and quarters. My goal is to be able to use the model trained to be able to sort through this pile.</p>
+<p>Throughout the testing I want to answer the following questions:</p>
+<ul>
+<li>How does the prototype compare to a human (myself) when both are binary sorting?</li>
+<li>How does the prototype compare to a human (myself) when the human sorts without limitations?</li>
+</ul>
+<h3 id="testing-methodology">Testing Methodology<a class="headerlink" href="#testing-methodology" title="Permanent link">¶</a></h3>
+<p>Below is a list of rules and/or notes regarding the testing methodology:</p>
+<ul>
+<li>Repeatability is required on the most tests to use averages as a baseline rather than relying just on a human being consistent (as humans are consistently inconsistent).</li>
+<li>In general, I will be working at a moderate pace, not too slowly or quickly.</li>
+<li>When I am binary sorting, I will have all objects in a pile, and pull from them one at a time without looking at what I am grabbing from the pile. If the object I select matches what I am looking for, it goes in one pile, and if it does not, it goes into a 'discard' pile. Once the pass has been completed, the discard pile is poured to where the original pile was, and the process is repeated until all objects have been sorted. After sorting, then the objects are counted, written down, and added together to calculate statistics (minus throughput).</li>
+<li>Tests carried out that do not limit the human (myself) will only be ran once to get a picture of the differences rather than averaged.</li>
+<li>When using the prototype, any time spent between passes counts as part of passing, so it is important to ensure that the end user doesn't waste too much time during these downtimes.</li>
+</ul>
+<h3 id="testing-plan">Testing Plan<a class="headerlink" href="#testing-plan" title="Permanent link">¶</a></h3>
+<p>A pile of coins was chosen to be the test pile. It is the same pile used across all tests (including manual and prototype testing). The pile consists of 15 Quarters, 15 Pennies, 26 Dimes, which yields a total of 56 objects sorted.</p>
+<ol>
+<li>Human Sorting in Binary Fashion:<ul>
+<li>HSB-1: QUARTER-PENNY-DIME</li>
+<li>HSB-2: DIME-QUARTER-PENNY</li>
+<li>HSB-3: PENNY-DIME-QUARTER</li>
+<li>HSB-A: Average of above 3 trials</li>
+</ul>
+</li>
+<li>Human Sorting (No Binary):<ul>
+<li>HSNB-1: Allowed to take one object at a time from big pile, but able to categorize into smaller sorted piles</li>
+<li>HSNB-2: Allowed to see full pile and sort into smaller sorted piles</li>
+</ul>
+</li>
+<li>Prototype Sorting:<ul>
+<li>PS-1</li>
+<li>PS-2: Recorded on Video (shown below)</li>
+<li>PS-3: Used supplemental lighting to address any concerns about lighting</li>
+<li>PS-A: Average of above 3 trials</li>
+</ul>
+</li>
+</ol>
+<p>Bonus Test: How long does it take to filter out the pennies from the whole pile?</p>
+<ol>
+<li>Prototype (PF-1)</li>
+<li>Manual (HF-1): Must pull from pile one at a time without looking, determine whether object selected is a penny, then act accordingly</li>
+<li>Manual (HF-2): Pour entire pile out, then filter out all pennies and everything else</li>
+</ol>
+<h3 id="benchmarks">Benchmarks<a class="headerlink" href="#benchmarks" title="Permanent link">¶</a></h3>
+<ul>
+<li>90% accuracy between actual objects and amount counted (through whichever sorting process was used)</li>
+<li>Object sorter must be faster than the times that a human (myself) sorting in a binary fashion</li>
+</ul>
+<h2 id="video">Video<a class="headerlink" href="#video" title="Permanent link">¶</a></h2>
+<div class="video-wrapper">
+  <iframe src="https://www.youtube.com/embed/uLqGxyvlCjE?mute=1&amp;rel=0&amp;playsinline=1" title="Trial PS-2" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen>
+  </iframe>
+</div>
+
+<div><br></div>
+
+<h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">¶</a></h2>
+<p>Table 1 - Speed Comparison</p>
+<table>
+<thead>
+<tr>
+<th>Test ID</th>
+<th>Time (MM:SS)</th>
+<th>Throughput (objects/min)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HSB-1</td>
+<td>05:36</td>
+<td>10.00</td>
+</tr>
+<tr>
+<td>HSB-2</td>
+<td>05:18</td>
+<td>10.56</td>
+</tr>
+<tr>
+<td>HSB-3</td>
+<td>05:29</td>
+<td>10.21</td>
+</tr>
+<tr>
+<td>HSB-A</td>
+<td>05:28</td>
+<td>10.24</td>
+</tr>
+<tr>
+<td>HSNB-1</td>
+<td>02:41</td>
+<td>20.87</td>
+</tr>
+<tr>
+<td>HSNB-2</td>
+<td>1:41</td>
+<td>33.27</td>
+</tr>
+<tr>
+<td>PS-1</td>
+<td>05:01</td>
+<td>11.16</td>
+</tr>
+<tr>
+<td>PS-2</td>
+<td>04:26</td>
+<td>12.63</td>
+</tr>
+<tr>
+<td>PS-3</td>
+<td>04:18</td>
+<td>13.02</td>
+</tr>
+<tr>
+<td>PS-A</td>
+<td>04:35</td>
+<td>12.22</td>
+</tr>
+</tbody>
+</table>
+<p>Findings:</p>
+<ul>
+<li>Human sorting in a non-binary fashion is BY FAR faster than anything done in a binary fashion.</li>
+<li>Binary sorting done by a human or by the prototype is comparable to one another, and overall, the prototype was about 16% quicker on average. Using HSB-A as a baseline, the prototype was capable of being around 21.3% quicker.</li>
+<li>There is potential to make the prototype faster, especially trimming down the time the servo rotates to either bin and back to the neutral position, however, it is best to minimize risk and ensure it works.</li>
+</ul>
+<p>Table 2 - YOLO Accuracy Per Trial</p>
+<table>
+<thead>
+<tr>
+<th>Test ID</th>
+<th>Pennies Detected</th>
+<th>Dimes Detected</th>
+<th>Quarters Detected</th>
+<th>Type of Error (ACTUAL OBJECT → DETECTED OBJECT)</th>
+<th>Number of Errors</th>
+<th>Accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HSB-1</td>
+<td>13/15</td>
+<td>26/26</td>
+<td>17/15</td>
+<td>Penny → Dime, Penny → Quarter, Dime → Quarter</td>
+<td>3</td>
+<td>94.6%</td>
+</tr>
+<tr>
+<td>HSB-2</td>
+<td>14/15</td>
+<td>22/26</td>
+<td>20/15</td>
+<td>Penny → Quarter, Dime → Quarter (x4)</td>
+<td>5</td>
+<td>91.1%</td>
+</tr>
+<tr>
+<td>HSB-3</td>
+<td>16/15</td>
+<td>27/26</td>
+<td>13/15</td>
+<td>Quarter → Dime, Quarter → Penny, Dime → Quarter</td>
+<td>3</td>
+<td>94.6%</td>
+</tr>
+</tbody>
+</table>
+<p>Findings:</p>
+<ul>
+<li>Pennies and Dimes are fairly strong, with quarters being the weak point</li>
+<li>Detection of quarters led to the most mistakes</li>
+<li>Lighting makes a noticable difference, but overall did not impact the results in the end. On one trial the errors were close to zero but I had to abandon that due to issues with the Arduino.</li>
+<li>Slight overcounting occured in Trial HSB-2, which is as a result of the object getting 'stuck' on the platform due to geometric limitations seen with FDM 3D Printing</li>
+</ul>
+<p>Table 3 - Penny Extraction Benchmark</p>
+<table>
+<thead>
+<tr>
+<th>Test ID</th>
+<th>Time (MM:SS)</th>
+<th>Throughput (objects/min)</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PF-1</td>
+<td>02:15</td>
+<td>24.44</td>
+<td>Prototype was 100% accurate in separating pennies</td>
+</tr>
+<tr>
+<td>HF-1</td>
+<td>02:23</td>
+<td>23.07</td>
+<td>Slower than the prototype</td>
+</tr>
+<tr>
+<td>HF-2</td>
+<td>00:43</td>
+<td>76.74</td>
+<td>Humans benefit from global view, but really only applies in situations when global view CAN be utilized (e.g. seeing 1000 resistors for sorting would be tricky)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="remarks">Remarks<a class="headerlink" href="#remarks" title="Permanent link">¶</a></h2>
+<p>Overall, the prototype was markedly faster in binary sorting situations compared against myself. However, humans have the benefit of a global view, which is something that isn't really possible with a YOLO Model. The overarching concept of a binary sorter inherently limited the scope of improvement by quite a bit. </p>
+<p>The speed of the object sorter can be improved in 2 main ways:</p>
+<ol>
+<li>Improve the model being used. This could also entail swapping the version of YOLO used or trying out a different line of model all together.</li>
+<li>Reduce the time spent waiting for the object to fall off the platform. If even 0.5 seconds can be saved here, across 50 objects, that would be a full 25 seconds saved, which can be seen as valuable time in a fast-paced environment.</li>
+</ol></div>
 
 
 
