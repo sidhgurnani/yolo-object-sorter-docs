@@ -1,6 +1,6 @@
 # YOLO-Based Binary Object Sorting System
 
-Welcome! This GitHub page will contain documentation regarding what this project is about as well as progress for where I am at and all developments that have occured. This will serve as a log of my progress.
+Welcome! This mkdocs page will contain documentation regarding what this project is about as well as progress for where I am at and all developments that have occured. This serves as a log of information I have collected throughout the development process.
 
 I just want to give a special thank you to Dr. Nirav Merchant from the University of Arizona for being an incredible mentor throughout the whole project. 
 
@@ -8,7 +8,7 @@ Check out my [engineering portfolio](https://sidhgurnani.github.io/sidh-ME-portf
 
 ## About Me
 
-My name is Sidh Gurnani, and I studied Mechanical Engineering at Purdue University, and graduated with my Bachelor's in May 2025. I have been working on this project since June 2024.
+My name is Sidh Gurnani, and I studied Mechanical Engineering at Purdue University, and graduated with my Bachelor's in May 2025. I have been working on this project from June 2024 up to November 2025.
 
 ## Project Status
 
@@ -29,13 +29,13 @@ My name is Sidh Gurnani, and I studied Mechanical Engineering at Purdue Universi
     <li class="done">✅ Milestone 2: Understand Basics of Machine Learning</li>
     <li class="done">✅ Milestone 3: Develop Basic Software</li>
     <li class="done"> ✅ Milestone 4: 3D Model and Design Physical Product</li>
-    <li class="current">⭕ Milestone 5: Integrate Final Software and Hardware</li>
-    <li>⭕ Milestone 6: Final Testing</li>
-    <li>⭕ Milestone 7: Reflection and Next Steps</li>
+    <li class="done"> ✅ Milestone 5: Integrate Final Software and Hardware</li>
+    <li class="done">✅ Milestone 6: Final Testing</li>
+    <li class="done">✅ Milestone 7: Reflection and Next Steps</li>
   </ul>
 
   <div class="next">
-    📌 <strong>Up Next:</strong> Final Software Bug Fixes
+    📌 <strong>Up Next:</strong> Future Improvements
   </div>
 </div>
 

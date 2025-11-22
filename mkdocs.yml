@@ -46,6 +46,8 @@ plugins:
       video_controls: True
       css_style:
         width: "100%"
+  - mermaid2
+  - search
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -54,12 +56,16 @@ markdown_extensions:
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - toc:
       permalink: true
   - attr_list
   - md_in_html
-  - pymdownx.blocks.caption
+  - pymdownx.details
 
 extra:
   social:
@@ -79,7 +85,9 @@ nav:
   - Milestones: milestones.md
   - Introduction and Motivation: intro.md
   - Architecture: architecture.md
-  - Development: 
+  - Development:
+      - Development Roadmap: 
+          - Relative Timeline: dev_roadmap.md 
       - Software Development:
           - Software Development Overview: software_development.md
           - Version 0 - WebUSB Findings (Shelved): WebUSB_Findings.md
@@ -90,8 +98,12 @@ nav:
           - Prototype Development Overview: prototype_development.md
           - Version 1 (Shelved): vibration_bowl_feeder.md
           - Version 2 (Final Prototype): prototype_v2.md
-  - Final Testing: final_testing.md
-  - Results and Reflections: results.md
+  - Integration:
+      - Integration Overview: integration.md
+      - Troubleshooting and FAQ: troubleshooting.md
+      - Training Models: training_models.md
+  - Testing: final_testing.md
+  - Reflections: results.md
 
 repo_url: https://github.com/sidhgurnani/yolo-object-sorter-docs
 repo_name: GitHub

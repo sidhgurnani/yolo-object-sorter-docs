@@ -1,0 +1,7 @@
+As with any cyber physical system, the integration between the software and hardware used is very crucial. Most of the integration took place in parallel with the development, as the Arduino was a key part of the software development. This section will focus on the bridge between the software and the hardware, which is the YOLO model itself.
+
+Technically speaking, there are a few items which can be seen as connecting a physical device to the software. The serial communication protocol and the USB cable are just two such examples. However, the item that makes or breaks how well this entire system works is the YOLO model.
+
+I initially thought that the system was 'plug and play', however, that could not be further from the truth, which is why I have a dedicated page on training models for this system. Note that it has some general training information for all YOLO models, but it is written with this project in mind.
+
+Another page is dedicated to troubleshooting. If one chooses to replicate this project and faces issues, refer to the troubleshooting guide to work through some of the issues. Note that all issues may not be encompassed as I was the main end user of this prototype, so I could not replicate all issues.

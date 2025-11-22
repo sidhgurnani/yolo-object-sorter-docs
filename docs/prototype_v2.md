@@ -44,19 +44,7 @@ Since most of the pins left are analog pins, this leaves room to include any sen
 
 ### CAD
 
-**Assembly/Subassembly CAD Videos:**
-
-Full Assembly:
-
-Coming soon....
-
-Camera Mounting Subassembly: 
-
-Coming soon....
-
-Sorting System + Body Subassemblies: 
-
-Coming soon....
+I used Onshape to create the CAD for this prototype, and you can view the CAD by clicking [here](https://cad.onshape.com/documents/56ded4b8e86468a67475ca0c/w/01bca40152a05fd67c7a1a53/e/aa33980481ab51f746d18740?renderMode=0&uiState=68fa4b88b81173cae62ee1a5).
 
 **Picture Galleries of CAD:**
 
@@ -957,11 +945,13 @@ Below are a few tables that show a list of components and hardware required:
 
 **Quick Assembly Notes:**
 
-1) The end of the Platform that has the shaft sticking out had to be sanded/filed down slightly in my case.
+1) **How to assemble platform to servo:** You will notice that the platform presses directly onto the splined shaft of the servo. The way I was able to achieve this was by using some accessories you get with servo motors. First, take any arm of the servo you were given (I elected to use the single arm piece given) and cut around the center female splined portion. After that, use some super glue and glue that small part into the side of the platform that has an opening for it (should fit snug). Wait for the glue to dry before assembly. To make a stronger bond, I would suggest using something like PLA Bond to increase the strength of the bond but that is not super necessary. I used the following video for inspiration, and you can use as a refernce should you want to recreate the assembly instructions: [Video](https://www.youtube.com/watch?v=zr02G2yCvGU).
 
-2) The holes on the LCD Screen Frame were originally intended to accomodate four M3 screws to hold the screen, but actually work better using four M2 screws.
+2) The end of the Platform that has the shaft sticking out had to be sanded/filed down slightly in my case.
 
-3) The Camera does not slot in anywhere, but it is instead sanwiched between the Camera Frame and Top Plate to keep it held in place. 
+3) The holes on the LCD Screen Frame were originally intended to accomodate four M3 screws to hold the screen, but actually work better using four M2 screws.
+
+4) The Camera does not slot in anywhere, but it is instead sandwiched between the Camera Frame and Top Plate to keep it held in place. 
 
 **Pictures (electronics not wired and LEDs not installed):**
 
