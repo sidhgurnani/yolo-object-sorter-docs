@@ -6,5 +6,4 @@ When a bullet is fired at a crime scene it leaves behind a casing and the bullet
 Designing a new device would also require engineers to justify the need for such a product, and also delve into how it can be used in other applications. There are similar existing problems in other applications. An example of such an application would be coin sorting. If there were 1000 assorted coins of differing currencies, it would be possible to sort by hand albeit through a lengthy procedure. Another example is in an agricultural setting, where one would have to maybe sort through 2-3 different types of beans efficiently. Other examples include but are not limited to: various assorted electrical components (resistors, op-amps, capacitors, etc), assorted LEGOs, and assorted perler beads. 
 
 ## Goals for this GitHub page:
-The goal for this GitHub website is to provide updates about my status on this project as they had happened in real-time, including concepts that I had considered, but ultimately did not work out. 
-# yolo-object-sorter-docs
+The goal for this GitHub website is to provide updates about my status on this project as they had happened in real-time, including concepts that I had considered, but ultimately did not work out.
