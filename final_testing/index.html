@@ -1166,6 +1166,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Results">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#speed-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      Speed Comparison
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yolo-accuracy-per-trial" class="md-nav__link">
+    <span class="md-ellipsis">
+      YOLO Accuracy Per Trial
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#penny-extraction-test" class="md-nav__link">
+    <span class="md-ellipsis">
+      Penny Extraction Test
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -1244,7 +1277,7 @@
 <li>Repeatability is required on the most tests to use averages as a baseline rather than relying just on a human being consistent (as humans are consistently inconsistent).</li>
 <li>In general, I will be working at a moderate pace, not too slowly or quickly.</li>
 <li>When I am binary sorting, I will have all objects in a pile, and pull from them one at a time without looking at what I am grabbing from the pile. If the object I select matches what I am looking for, it goes in one pile, and if it does not, it goes into a 'discard' pile. Once the pass has been completed, the discard pile is poured to where the original pile was, and the process is repeated until all objects have been sorted. After sorting, then the objects are counted, written down, and added together to calculate statistics (minus throughput).</li>
-<li>Tests carried out that do not limit the human (myself) will only be ran once to get a picture of the differences rather than averaged.</li>
+<li>Tests carried out that do not limit the human (myself) will only be ran once to get a picture of the differences rather than averaged. In other words, all non-binary testing done by me will be conducted once to illustrate an obvious and expected difference rather than try to gather any meaningful data.</li>
 <li>When using the prototype, any time spent between passes counts as part of passing, so it is important to ensure that the end user doesn't waste too much time during these downtimes.</li>
 </ul>
 <h3 id="testing-plan">Testing Plan<a class="headerlink" href="#testing-plan" title="Permanent link">¶</a></h3>
@@ -1290,7 +1323,7 @@
 <div><br></div>
 
 <h2 id="results">Results<a class="headerlink" href="#results" title="Permanent link">¶</a></h2>
-<p>Table 1 - Speed Comparison</p>
+<h3 id="speed-comparison">Speed Comparison<a class="headerlink" href="#speed-comparison" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -1352,13 +1385,14 @@
 </tr>
 </tbody>
 </table>
+<p><img alt="" src="../assets/sorting_comparison.png"></p>
 <p>Findings:</p>
 <ul>
 <li>Human sorting in a non-binary fashion is BY FAR faster than anything done in a binary fashion.</li>
 <li>Binary sorting done by a human or by the prototype is comparable to one another, and overall, the prototype was about 16% quicker on average. Using HSB-A as a baseline, the prototype was capable of being around 21.3% quicker.</li>
 <li>There is potential to make the prototype faster, especially trimming down the time the servo rotates to either bin and back to the neutral position, however, it is best to minimize risk and ensure it works.</li>
 </ul>
-<p>Table 2 - YOLO Accuracy Per Trial</p>
+<h3 id="yolo-accuracy-per-trial">YOLO Accuracy Per Trial<a class="headerlink" href="#yolo-accuracy-per-trial" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -1373,7 +1407,7 @@
 </thead>
 <tbody>
 <tr>
-<td>HSB-1</td>
+<td>PS-1</td>
 <td>13/15</td>
 <td>26/26</td>
 <td>17/15</td>
@@ -1382,7 +1416,7 @@
 <td>94.6%</td>
 </tr>
 <tr>
-<td>HSB-2</td>
+<td>PS-2</td>
 <td>14/15</td>
 <td>22/26</td>
 <td>20/15</td>
@@ -1391,7 +1425,7 @@
 <td>91.1%</td>
 </tr>
 <tr>
-<td>HSB-3</td>
+<td>PS-3</td>
 <td>16/15</td>
 <td>27/26</td>
 <td>13/15</td>
@@ -1401,6 +1435,9 @@
 </tr>
 </tbody>
 </table>
+<p><img alt="" src="../assets/coin_detection_results.png"></p>
+<p><img alt="" src="../assets/detection_accuracy.png"></p>
+<p><img alt="" src="../assets/error_count.png"></p>
 <p>Findings:</p>
 <ul>
 <li>Pennies and Dimes are fairly strong, with quarters being the weak point</li>
@@ -1408,7 +1445,7 @@
 <li>Lighting makes a noticable difference, but overall did not impact the results in the end. On one trial the errors were close to zero but I had to abandon that due to issues with the Arduino.</li>
 <li>Slight overcounting occured in Trial HSB-2, which is as a result of the object getting 'stuck' on the platform due to geometric limitations seen with FDM 3D Printing</li>
 </ul>
-<p>Table 3 - Penny Extraction Benchmark</p>
+<h3 id="penny-extraction-test">Penny Extraction Test<a class="headerlink" href="#penny-extraction-test" title="Permanent link">¶</a></h3>
 <table>
 <thead>
 <tr>
@@ -1439,6 +1476,7 @@
 </tr>
 </tbody>
 </table>
+<p><img alt="" src="../assets/penny_filtering_comparison.png"></p>
 <h2 id="remarks">Remarks<a class="headerlink" href="#remarks" title="Permanent link">¶</a></h2>
 <p>Overall, the prototype was markedly faster in binary sorting situations compared against myself. However, humans have the benefit of a global view, which is something that isn't really possible with a YOLO Model. The overarching concept of a binary sorter inherently limited the scope of improvement by quite a bit. </p>
 <p>The speed of the object sorter can be improved in 2 main ways:</p>
