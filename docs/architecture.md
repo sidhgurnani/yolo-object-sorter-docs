@@ -48,3 +48,7 @@ Here are some answers to some of the questions I posed above:
 * **What happens if the user cannot feed objects one-by-one? How does the system handle this?** &rarr; Using something like a feeder can allow objects to be fed more uniformly, regardless of how the user would load the objects.
 * **How can the system detect the objects in a webcam? Should a box be built around the webcam and an LED to illuminate it or is there another solution?** &rarr; Two options can be considered: 1. creating a custom enclosure around the webcam with a light that will hopefully detect objects, or 2. using a mirror to angle the view of the webcam downward and create a 3D printed conveyor belt. 
 * **What mode of movement should objects use when sending an object to the webcam and from the webcam to the bin?** &rarr; Two options can be considered: 1. Using a relatively universal rail that could transfer objects via a rail 2. perhaps this can be done with a 3D printed conveyor belt, with bins being put on the side of the conveyor belt for easy object sorting via motors or something built into the belt itself.
+
+Update (Nov 2025):
+
+* Note that I answered the questions with what concepts I had in mind at that time, which did not line up 100% with the concept that I ended up going with. The questions and answers were more posed to generate thinking on my side. The answers to the questions were nonbinding at the time, and ended up differing from what the final prototype looked like.

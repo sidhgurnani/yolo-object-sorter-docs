@@ -48,6 +48,7 @@ plugins:
         width: "100%"
   - mermaid2
   - search
+  - mkdocs-pdf
 
 markdown_extensions:
   - pymdownx.highlight:

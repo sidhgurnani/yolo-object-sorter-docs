@@ -3784,8 +3784,8 @@ Both systems include detailed logging:
 | Objects stuck | Servo angles wrong | Adjust TARGET_ANGLE and NOT_TARGET_ANGLE |
 | No camera feed | Camera not selected | Run setup wizard, test camera |
 
-#### Serial Monitor Output Example
-```
+**Serial Monitor Output Example**
+```txt
 🤖 Arduino Binary Sorter V3 - Servo Counting
 ✅ Hardware initialized
 📭 No objects in EEPROM

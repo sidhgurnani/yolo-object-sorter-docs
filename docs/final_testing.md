@@ -20,7 +20,7 @@ Below is a list of rules and/or notes regarding the testing methodology:
 * Repeatability is required on the most tests to use averages as a baseline rather than relying just on a human being consistent (as humans are consistently inconsistent).
 * In general, I will be working at a moderate pace, not too slowly or quickly.
 * When I am binary sorting, I will have all objects in a pile, and pull from them one at a time without looking at what I am grabbing from the pile. If the object I select matches what I am looking for, it goes in one pile, and if it does not, it goes into a 'discard' pile. Once the pass has been completed, the discard pile is poured to where the original pile was, and the process is repeated until all objects have been sorted. After sorting, then the objects are counted, written down, and added together to calculate statistics (minus throughput).
-* Tests carried out that do not limit the human (myself) will only be ran once to get a picture of the differences rather than averaged.
+* Tests carried out that do not limit the human (myself) will only be ran once to get a picture of the differences rather than averaged. In other words, all non-binary testing done by me will be conducted once to illustrate an obvious and expected difference rather than try to gather any meaningful data.
 * When using the prototype, any time spent between passes counts as part of passing, so it is important to ensure that the end user doesn't waste too much time during these downtimes.
 
 ### Testing Plan
@@ -68,7 +68,7 @@ Bonus Test: How long does it take to filter out the pennies from the whole pile?
 
 ## Results
 
-Table 1 - Speed Comparison
+### Speed Comparison
 
 | Test ID | Time (MM:SS) | Throughput (objects/min) |
 | ------------------ | ------------------ | ------------------ |
@@ -83,19 +83,27 @@ Table 1 - Speed Comparison
 | PS-3 | 04:18 | 13.02 |
 | PS-A | 04:35 | 12.22 |
 
+![](./assets/sorting_comparison.png)
+
 Findings:
 
 * Human sorting in a non-binary fashion is BY FAR faster than anything done in a binary fashion.
 * Binary sorting done by a human or by the prototype is comparable to one another, and overall, the prototype was about 16% quicker on average. Using HSB-A as a baseline, the prototype was capable of being around 21.3% quicker.
 * There is potential to make the prototype faster, especially trimming down the time the servo rotates to either bin and back to the neutral position, however, it is best to minimize risk and ensure it works.
 
-Table 2 - YOLO Accuracy Per Trial
+### YOLO Accuracy Per Trial
 
 | Test ID | Pennies Detected | Dimes Detected | Quarters Detected | Type of Error (ACTUAL OBJECT &rarr; DETECTED OBJECT) | Number of Errors | Accuracy | 
 | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ | ------------------ |
-| HSB-1 | 13/15 | 26/26 | 17/15 | Penny &rarr; Dime, Penny &rarr; Quarter, Dime &rarr; Quarter | 3 | 94.6% |
-| HSB-2 | 14/15 | 22/26 | 20/15 | Penny &rarr; Quarter, Dime &rarr; Quarter (x4) | 5 | 91.1% |
-| HSB-3 | 16/15 | 27/26 | 13/15 | Quarter &rarr; Dime, Quarter &rarr; Penny, Dime &rarr; Quarter | 3 | 94.6% |
+| PS-1 | 13/15 | 26/26 | 17/15 | Penny &rarr; Dime, Penny &rarr; Quarter, Dime &rarr; Quarter | 3 | 94.6% |
+| PS-2 | 14/15 | 22/26 | 20/15 | Penny &rarr; Quarter, Dime &rarr; Quarter (x4) | 5 | 91.1% |
+| PS-3 | 16/15 | 27/26 | 13/15 | Quarter &rarr; Dime, Quarter &rarr; Penny, Dime &rarr; Quarter | 3 | 94.6% |
+
+![](./assets/coin_detection_results.png)
+
+![](./assets/detection_accuracy.png)
+
+![](./assets/error_count.png)
 
 Findings:
 
@@ -104,13 +112,15 @@ Findings:
 * Lighting makes a noticable difference, but overall did not impact the results in the end. On one trial the errors were close to zero but I had to abandon that due to issues with the Arduino.
 * Slight overcounting occured in Trial HSB-2, which is as a result of the object getting 'stuck' on the platform due to geometric limitations seen with FDM 3D Printing
 
-Table 3 - Penny Extraction Benchmark
+### Penny Extraction Test
 
 | Test ID | Time (MM:SS) | Throughput (objects/min) | Notes |
 | ------------------ | ------------------ | ------------------ | ----------------------------------------- |
 | PF-1 | 02:15 | 24.44 | Prototype was 100% accurate in separating pennies |
 | HF-1 | 02:23 | 23.07 | Slower than the prototype |
 | HF-2 | 00:43 | 76.74 | Humans benefit from global view, but really only applies in situations when global view CAN be utilized (e.g. seeing 1000 resistors for sorting would be tricky) |
+
+![](./assets/penny_filtering_comparison.png)
 
 ## Remarks
 

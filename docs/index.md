@@ -4,11 +4,25 @@ Welcome! This mkdocs page will contain documentation regarding what this project
 
 I just want to give a special thank you to Dr. Nirav Merchant from the University of Arizona for being an incredible mentor throughout the whole project. 
 
-Check out my [engineering portfolio](https://sidhgurnani.github.io/sidh-ME-portfolio/) to see other projects!
-
 ## About Me
 
-My name is Sidh Gurnani, and I studied Mechanical Engineering at Purdue University, and graduated with my Bachelor's in May 2025. I have been working on this project from June 2024 up to November 2025.
+My name is Sidh Gurnani, and I studied Mechanical Engineering at Purdue University, and graduated with my Bachelor's in May 2025. I have worked on this project from June 2024 up to November 2025.
+
+[Visit my portfolio](https://sidhgurnani.github.io/sidh-ME-portfolio/){ .md-button .md-button--primary target="_blank" }
+
+## Overview
+
+View the presentation below to get a high level summary of the project:
+
+[Trouble Loading? Click Here to View PDF](./assets/YOLO-Based%20Binary%20Object%20Sorting%20System%20Slides.pdf)
+
+![YOLO-Based Binary Object Sorting System Slides](<./assets/YOLO-Based Binary Object Sorting System Slides.pdf>){ type=application/pdf style="min-height:90vh;width:100%" }
+
+## GitHub Repository
+
+This GitHub repo contains all of the files I used when I did all demos, including the Python app, Arduino code, STL files for the mechanical components, trained models I used, and test code for electronics. I found the best way to run this was to use PlatformIO within VSCode, so it is set up with that framework in mind. Feel free to have a look!
+
+[Visit GitHub Repo](https://github.com/sidhgurnani/yolo-binary-object-sorter/tree/main){ .md-button .md-button--primary target="_blank" }
 
 ## Project Status
 
